@@ -83,8 +83,9 @@ export default function HomePage() {
           <h2 className="text-3xl font-bold text-center mb-4">
             Trusted By <span className="text-gradient">Industry Leaders</span>
           </h2>
+          {/* THIS IS THE FIXED LINE: */}
           <p className="text-lg text-gray-400 text-center mb-16">
-            We are proud to be a chosen partner for India's top real estate developers.
+            We are proud to be a chosen partner for India&apos;s top real estate developers.
           </p>
 
           {/* Client Logo Grid */}
