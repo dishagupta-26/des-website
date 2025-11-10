@@ -1,13 +1,14 @@
 // app/projects/page.tsx
 import { PageHeader } from '@/components/PageHeader';
 import { projectData } from './data'; // Import our data file
-import { ProjectCarousel } from '@/components/ProjectCarousel'; // Import our new carousel
+import { ProjectCarousel } from '@/components/ProjectCarousel'; // Import our carousel
 
 export default function ProjectsPage() {
   return (
-    <div className="bg-black text-brand-light">
+    // Updated to new theme colors
+    <div className="bg-brand-bg text-brand-text">
       
-      {/* 1. Page Header */}
+      {/* 1. Page Header (This will automatically update) */}
       <PageHeader
         title="Our"
         gradientText="Projects"
@@ -20,12 +21,12 @@ export default function ProjectsPage() {
         {projectData.map((category) => (
           <section key={category.id}>
             
-            {/* Category Title */}
-            <h2 className="text-3xl font-bold mb-8 pb-4 border-b border-gray-800">
+            {/* Category Title (Updated to new theme) */}
+            <h2 className="text-3xl font-bold mb-8 pb-4 border-b border-gray-200">
               {category.title}
             </h2>
 
-            {/* Use the Carousel Component */}
+            {/* Use the Carousel Component (This will automatically update) */}
             <ProjectCarousel
               images={category.images}
               categoryTitle={category.title}

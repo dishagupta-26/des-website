@@ -10,13 +10,14 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        'brand-dark': '#000000',
-        'brand-light': '#FFFFFF',
-        'brand-purple': '#4F00C0',
-        'brand-cyan': '#00F2EA',
+        // Your new color palette
+        'brand-bg': '#FFF8F1',    // The parchment background
+        'brand-text': '#3D3935',   // The dark text
+        'brand-accent': '#B84B1F', // The special "rust" color
       },
       backgroundImage: {
-        'brand-gradient': 'linear-gradient(to right, #4F00C0, #00F2EA)',
+        // We'll make the gradient use the new accent
+        'brand-gradient': 'linear-gradient(to right, #B84B1F, #D16A3E)', // Rust to a lighter shade
       },
     },
   },

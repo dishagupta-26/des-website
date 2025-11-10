@@ -8,31 +8,32 @@ interface StatCardProps {
   icon: ReactNode;
   label: string;
   value: string;
-  delay?: number; // For staggered animation
+  delay?: number;
 }
 
 export const StatCard = ({ icon, label, value, delay = 0 }: StatCardProps) => {
   const { ref, inView } = useInView({
-    triggerOnce: true, // Only trigger once
-    threshold: 0.5,   // Trigger when 50% visible
+    triggerOnce: true,
+    threshold: 0.5,
   });
 
   return (
     <div
       ref={ref}
       className={`
-        bg-gray-900 p-6 rounded-xl border border-gray-800 
-        flex items-center gap-5 transition-all duration-700
+        bg-white p-6 rounded-xl border border-gray-200 
+        shadow-lg hover:shadow-xl transition-all duration-300
+        flex items-center gap-5
         ${inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}
       `}
       style={{ transitionDelay: `${delay}ms` }}
     >
-      <div className="flex-shrink-0 text-brand-cyan">
+      <div className="flex-shrink-0 text-brand-accent">
         {icon}
       </div>
       <div>
-        <p className="text-3xl font-bold text-white">{value}</p>
-        <p className="text-lg text-gray-400">{label}</p>
+        <p className="text-3xl font-bold text-brand-text">{value}</p>
+        <p className="text-lg text-gray-700">{label}</p>
       </div>
     </div>
   );

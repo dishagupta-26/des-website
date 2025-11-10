@@ -1,18 +1,14 @@
 // app/clients/page.tsx
 import { PageHeader } from '@/components/PageHeader';
-import { TabbedContent } from '@/components/TabbedContent'; // Import our new component
+import { TabbedContent } from '@/components/TabbedContent';
 import Image from 'next/image';
 
-// --- Data from your Mastersheet PDF ---
-
-// 1. Ruparel Realty Data [cite: 3]
+// ... (all your project data arrays like ruparelProjects, etc. are here)
 const ruparelProjects = [
   { sr: '1.', project: 'G+23 storied rehab building at Kandivili (W) - Mivan', value: '2,75,72,631.00', year: '2018-2020' },
   { sr: '2.', project: 'Phase I, B+G+13 storied building at Jogeshwari (E) Conventional', value: '64,91,276.00', year: '2018-2021' },
   { sr: '3.', project: 'Phase II, G+13 storied Building at Jogeshwari (E) - Conventional.', value: '66,92,867.00', year: '2021-2024' },
 ];
-
-// 2. Raheja Universal Data [cite: 7]
 const rahejaProjects = [
   { sr: '1.', project: 'Finishing work - Unit 28 (labour)', value: '62,540.00', year: 'Feb 2021' },
   { sr: '2.', project: 'Work order for Porta cabin repair and site development - (Part material)', value: '28,85,063.00', year: '2022-2023' },
@@ -24,25 +20,20 @@ const rahejaProjects = [
   { sr: '8.', project: 'Civil work for partition wall B3-B4 shed', value: '22,41,943.00', year: '2023' },
   { sr: '9.', project: 'Interior extension- sales pavilion- part material', value: '3,55,145.00', year: '2022' },
 ];
-
-// 3. Piramal Realty Data [cite: 9]
 const piramalProjects = [
   { sr: '1.', project: 'Misc Civil work Cluster 4 - With Material, at Piramal Vaikunth, Thane', value: '79,76,433.00', year: '2023-2024' },
   { sr: '2.', project: 'Misc Civil work Cluster 4 A with material, at Piramal Vaikunth, Thane', value: '76,16,346.00', year: '2023-2024' },
 ];
-
-// --- Client Logo List ---
 const clientsList = [
   { name: 'RAHEJA UNIVERSAL', logo: '/assets/client-raheja.png' },
   { name: 'RUPAREL REALTY', logo: '/assets/client-ruparel.png' },
   { name: 'PIRAMAL REALTY', logo: '/assets/client-piramal.png' },
 ];
 
-// Helper function to build a table
 const createProjectTable = (projects: { sr: string; project: string; value: string; year: string }[]) => (
   <div className="overflow-x-auto">
     <table className="w-full text-left table-auto">
-      <thead className="border-b border-gray-700 text-gray-400">
+      <thead className="border-b border-gray-300 text-gray-600">
         <tr>
           <th className="py-3 px-4 w-16">Sr. no.</th>
           <th className="py-3 px-4">Project with location</th>
@@ -50,9 +41,9 @@ const createProjectTable = (projects: { sr: string; project: string; value: stri
           <th className="py-3 px-4 w-32">Year</th>
         </tr>
       </thead>
-      <tbody className="divide-y divide-gray-800">
+      <tbody className="divide-y divide-gray-200">
         {projects.map((project) => (
-          <tr key={project.sr} className="hover:bg-gray-900">
+          <tr key={project.sr} className="hover:bg-gray-50">
             <td className="py-4 px-4">{project.sr}</td>
             <td className="py-4 px-4">{project.project}</td>
             <td className="py-4 px-4 text-right">{project.value}</td>
@@ -63,19 +54,18 @@ const createProjectTable = (projects: { sr: string; project: string; value: stri
     </table>
   </div>
 );
+// ... (end of data arrays)
 
-// --- The Page Component ---
 export default function ClientsPage() {
 
-  // Define the content for our tabs
   const summaryTabs = [
     {
       title: 'Ruparel Realty',
       content: (
         <div>
           {createProjectTable(ruparelProjects)}
-          <p className="text-gray-400 text-sm mt-6 italic">
-            Note: The above projects were executed on a pure labour basis. All material required (except tools and tackles) was provided by M/s. Ruparel Realty. 
+          <p className="text-gray-600 text-sm mt-6 italic">
+            Note: The above projects were executed on a pure labour basis. All material required (except tools and tackles) was provided by M/s. Ruparel Realty.
           </p>
         </div>
       )
@@ -91,9 +81,8 @@ export default function ClientsPage() {
   ];
 
   return (
-    <div className="bg-black text-brand-light">
+    <div className="bg-brand-bg text-brand-text">
       
-      {/* 1. Page Header */}
       <PageHeader
         title="Our Major"
         gradientText="Clients"
@@ -102,14 +91,13 @@ export default function ClientsPage() {
 
       <div className="max-w-7xl mx-auto py-24 px-8">
 
-        {/* 2. Client Logo Grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
           {clientsList.map((client) => (
             <div
               key={client.name}
-              className="bg-gray-900 rounded-xl border border-gray-800 p-8
-                         flex flex-col justify-center items-center gap-8
-                         transition-all duration-300 hover:border-brand-cyan"
+              className="bg-white rounded-xl border border-gray-200 shadow-lg p-8
+                         hover:shadow-xl transition-all duration-300
+                         flex flex-col justify-center items-center gap-8"
             >
               <Image
                 src={client.logo}
@@ -118,28 +106,28 @@ export default function ClientsPage() {
                 height={100}
                 className="object-contain h-20 w-auto"
               />
-              <h3 className="text-xl font-semibold text-brand-light text-center">
+              <h3 className="text-xl font-semibold text-brand-text text-center">
                 {client.name}
               </h3>
             </div>
           ))}
         </div>
 
-        {/* 3. Orders Executed & Ongoing Projects Section */}
-        <div className="mt-24 bg-gray-900 border border-gray-800 rounded-xl p-12">
+        <div className="mt-24 bg-white border border-gray-200 rounded-xl p-12 
+                        shadow-lg hover:shadow-xl transition-all duration-300">
           <h2 className="text-3xl font-bold text-center mb-10">
             Orders <span className="text-gradient">Executed</span>
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-10 text-center md:text-left">
             <div>
-              <h3 className="text-xl font-semibold text-brand-cyan mb-3">Ongoing Project</h3>
-              <p className="text-lg text-gray-300">
+              <h3 className="text-xl font-semibold text-brand-accent mb-3">Ongoing Project</h3>
+              <p className="text-lg text-gray-700">
                 Misc. Civil Work at Piramal Vaikunth, Thane (W)
               </p>
             </div>
             <div>
-              <h3 className="text-xl font-semibold text-brand-cyan mb-3">Interior Projects</h3>
-              <p className="text-lg text-gray-300">
+              <h3 className="text-xl font-semibold text-brand-accent mb-3">Interior Projects</h3>
+              <p className="text-lg text-gray-700">
                 Several flat interiors executed at various locations in MMR, 
                 ranging from 4 lacs to 30 lacs.
               </p>
@@ -147,12 +135,12 @@ export default function ClientsPage() {
           </div>
         </div>
 
-        {/* 4. NEW: Detailed Work Summary Section */}
         <div className="mt-24">
           <h2 className="text-3xl font-bold text-center mb-12">
             Detailed Work <span className="text-gradient">Summary</span>
           </h2>
-          <div className="bg-gray-900 border border-gray-800 rounded-xl p-8">
+          <div className="bg-white border border-gray-200 rounded-xl p-8 
+                          shadow-lg hover:shadow-xl transition-all duration-300">
             <TabbedContent tabs={summaryTabs} />
           </div>
         </div>

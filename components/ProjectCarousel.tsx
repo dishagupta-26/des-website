@@ -2,7 +2,7 @@
 'use client';
 
 import React from 'react';
-import Marquee from 'react-fast-marquee'; // <-- Import the new package
+import Marquee from 'react-fast-marquee';
 import Image from 'next/image';
 
 interface ProjectCarouselProps {
@@ -16,25 +16,24 @@ export const ProjectCarousel = ({ images, categoryTitle }: ProjectCarouselProps)
   }
 
   return (
-    // We give the container a bit of padding
-    <div className="rounded-lg border border-gray-800 bg-gray-900 py-6">
+    <div className="rounded-lg border border-gray-200 bg-white 
+                    shadow-lg hover:shadow-xl transition-all duration-300 py-6">
       <Marquee
-        pauseOnHover={true} // This is exactly what you asked for
-        gradient={true}     // Adds a nice fade effect on the edges
-        gradientColor="#111827" // Matches our bg-gray-900
+        pauseOnHover={true}
+        gradient={true}
+        gradientColor="#FFF8F1"
         gradientWidth={100}
-        speed={40}            // You can change this number to make it faster/slower
+        speed={40}
       >
         {images.map((imageName) => (
           <div 
-            // This gives each image a fixed size and spacing
-            className="aspect-square w-72 mx-4" // w-72 is 288px
+            className="aspect-square w-72 mx-4"
             key={imageName}
           >
             <Image
               src={`/assets/projects/${imageName}`}
               alt={`${categoryTitle} - ${imageName}`}
-              width={400}  // 400x400
+              width={400}
               height={400}
               className="object-cover w-full h-full rounded-lg"
               priority

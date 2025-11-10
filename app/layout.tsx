@@ -10,12 +10,11 @@ const poppins = Poppins({
   weight: ['300', '400', '500', '600', '700']
 })
 
-// THIS IS THE PART THAT FIXES THE ICON
 export const metadata: Metadata = {
   title: 'Deeshi Engineering Solutions',
   description: 'Market leaders in infrastructure construction & real estate development',
   icons: {
-    icon: '/assets/des-icon.png', // This tells the browser to use your logo
+    icon: '/assets/des-logo.png',
   },
 }
 
@@ -26,7 +25,8 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${poppins.className} bg-brand-dark text-brand-light`}>
+      {/* This line is updated to use the new brand colors */}
+      <body className={`${poppins.className} bg-brand-bg text-brand-text`}>
         <Navbar />
         <main>
           {children}
