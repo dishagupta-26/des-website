@@ -15,9 +15,3 @@
   background-clip: text;
   color: transparent;
 }
-
-/* 3. NEW: Add a subtle texture to the background */
-body {
-  /* This creates a very faint "noise" texture */
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 80 80' width='80' height='80'%3E%3Crect fill='%23FFF8F1' width='80' height='80'/%3E%3Cg fill-opacity='0.03' fill='%233D3935'%3E%3Ccircle cx='40' cy='40' r='5'/%3E%3Ccircle cx='0' cy='0' r='5'/%3E%3Ccircle cx='80' cy='0' r='5'/%3E%3Ccircle cx='0' cy='80' r='5'/%3E%3Ccircle cx='80' cy='80' r='5'/%3E%3Ccircle cx='40' cy='0' r='5'/%3E%3Ccircle cx='0' cy='40' r='5'/%3E%3Ccircle cx='80' cy='40' r='5'/%3E%3Ccircle cx='40' cy='80' r='5'/%3E%3C/g%3E%3C/svg%3E");
-}
