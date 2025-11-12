@@ -1,5 +1,7 @@
 // app/about/page.tsx
 import { PageHeader } from '@/components/PageHeader';
+import Image from 'next/image'; // Import the Image component
+import Link from 'next/link';
 
 const aboutStats = [
   { label: 'Established', value: 'April 2023' },
@@ -7,8 +9,13 @@ const aboutStats = [
   { label: 'Proprietor', value: 'Mrs. Shilpa Deepak Gupta' },
 ];
 
+// Updated the certificates array to include 'href' paths
 const certificates = [
-  'PAN CARD', 'MSME', 'GST', 'PF', 'ADHAR CARD'
+  { name: 'PAN CARD', href: '/assets/certificates/pan-card.jpg' },
+  { name: 'MSME', href: '/assets/certificates/msme-certificate.pdf' },
+  { name: 'GST', href: '/assets/certificates/gst-registration.pdf' },
+  { name: 'PF', href: '/assets/certificates/pf-registration.pdf' },
+  { name: 'ADHAR CARD', href: '/assets/certificates/adhar-card.jpg' }
 ];
 
 export default function AboutPage() {
@@ -23,7 +30,58 @@ export default function AboutPage() {
 
       <div className="max-w-7xl mx-auto py-24 px-8">
         
-        {/* === ADDED SHADOWS & HOVER EFFECTS HERE === */}
+        {/* === Vision & Mission Section === */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-16 mb-24">
+          
+          {/* --- Vision Card --- */}
+          <div className="relative bg-white border border-gray-200 rounded-xl p-10 shadow-lg 
+                          hover:shadow-xl transition-all duration-300">
+            
+            <Image
+              src="/assets/illustrations/crane.png"
+              alt="Crane Illustration"
+              width={150}
+              height={150}
+              className="absolute -top-20 -right-10 w-44 h-44 scale-x-[-1]"
+            />
+
+            <h2 className="relative z-10 text-3xl font-bold mb-6">
+              Our <span className="text-gradient">Vision</span>
+            </h2>
+            {/* Added text-justify class here */}
+            <p className="relative z-10 text-lg text-gray-700 leading-relaxed text-justify">
+              To be a world-class infrastructure construction and Real Estate 
+              Development company committed to total customer satisfaction, 
+              by building on our strengths - superlative quality of material, 
+              cutting-edge technology, timely completion and demonstrating 
+              the highest standards of workmanship.
+            </p>
+          </div>
+
+          {/* --- Mission Card --- */}
+          <div className="relative bg-white border border-gray-200 rounded-xl p-10 shadow-lg
+                          hover:shadow-xl transition-all duration-300">
+            
+            <Image
+              src="/assets/illustrations/blueprint-hat.png"
+              alt="Blueprint Hat Illustration"
+              width={200}
+              height={100}
+              className="absolute -bottom-0 -right-4 w-80 h-auto object-contain"
+            />
+
+            <h2 className="relative z-10 text-3xl font-bold mb-6">
+              Our <span className="text-gradient">Mission</span>
+            </h2>
+            {/* Added text-justify class here */}
+            <p className="relative z-10 text-lg text-gray-700 leading-relaxed text-justify">
+              To strengthen our position as a market leader in 
+              Infrastructure Construction and Real Estate Development Projects.
+            </p>
+          </div>
+        </div>
+
+        {/* === Stats Section === */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-24">
           {aboutStats.map((stat) => (
             <div 
@@ -41,48 +99,24 @@ export default function AboutPage() {
           ))}
         </div>
 
-        {/* === ADDED SHADOWS & HOVER EFFECTS HERE === */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-16 mb-24">
-          
-          <div className="bg-white border border-gray-200 rounded-xl p-10 shadow-lg 
-                          hover:shadow-xl transition-all duration-300">
-            <h2 className="text-3xl font-bold mb-6">
-              Our <span className="text-gradient">Vision</span>
-            </h2>
-            <p className="text-lg text-gray-700 leading-relaxed">
-              To be a world-class infrastructure construction and Real Estate 
-              Development company committed to total customer satisfaction, 
-              by building on our strengths - superlative quality of material, 
-              cutting-edge technology, timely completion and demonstrating 
-              the highest standards of workmanship.
-            </p>
-          </div>
-
-          <div className="bg-white border border-gray-200 rounded-xl p-10 shadow-lg
-                          hover:shadow-xl transition-all duration-300">
-            <h2 className="text-3xl font-bold mb-6">
-              Our <span className="text-gradient">Mission</span>
-            </h2>
-            <p className="text-lg text-gray-700 leading-relaxed">
-              “To strengthen our position as a market leader in 
-              Infrastructure Construction and Real Estate Development Projects.”
-            </p>
-          </div>
-        </div>
-
+        {/* === Certificates Section === */}
         <div>
           <h2 className="text-3xl font-bold text-center mb-12">
             Certificates & <span className="text-gradient">Registrations</span>
           </h2>
           <div className="flex flex-wrap justify-center gap-6">
+            
             {certificates.map((cert) => (
-              <div 
-                key={cert}
+              <Link 
+                key={cert.name}
+                href={cert.href}
+                target="_blank" // Opens the certificate in a new tab
+                rel="noopener noreferrer"
                 className="bg-brand-accent text-white text-lg font-medium px-8 py-4 rounded-full
                            shadow-md hover:opacity-90 transition-opacity"
               >
-                {cert}
-              </div>
+                {cert.name}
+              </Link>
             ))}
           </div>
         </div>
