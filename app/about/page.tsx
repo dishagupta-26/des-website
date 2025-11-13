@@ -3,12 +3,6 @@ import { PageHeader } from '@/components/PageHeader';
 import Image from 'next/image'; // Import the Image component
 import Link from 'next/link';
 
-const aboutStats = [
-  { label: 'Established', value: 'April 2023' },
-  { label: 'Founder', value: 'Mr. Deepak Gupta' },
-  { label: 'Proprietor', value: 'Mrs. Shilpa Deepak Gupta' },
-];
-
 // Updated the certificates array to include 'href' paths
 const certificates = [
   { name: 'PAN CARD', href: '/assets/certificates/pan-card.jpg' },
@@ -30,7 +24,7 @@ export default function AboutPage() {
 
       <div className="max-w-7xl mx-auto py-24 px-8">
         
-        {/* === Vision & Mission Section === */}
+        {/* === Vision & Mission Section (Unchanged) === */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-16 mb-24">
           
           {/* --- Vision Card --- */}
@@ -48,7 +42,6 @@ export default function AboutPage() {
             <h2 className="relative z-10 text-3xl font-bold mb-6">
               Our <span className="text-gradient">Vision</span>
             </h2>
-            {/* Added text-justify class here */}
             <p className="relative z-10 text-lg text-gray-700 leading-relaxed text-justify">
               To be a world-class infrastructure construction and Real Estate 
               Development company committed to total customer satisfaction, 
@@ -73,33 +66,51 @@ export default function AboutPage() {
             <h2 className="relative z-10 text-3xl font-bold mb-6">
               Our <span className="text-gradient">Mission</span>
             </h2>
-            {/* Added text-justify class here */}
             <p className="relative z-10 text-lg text-gray-700 leading-relaxed text-justify">
-              To strengthen our position as a market leader in 
-              Infrastructure Construction and Real Estate Development Projects.
+              “To strengthen our position as a market leader in 
+              Infrastructure Construction and Real Estate Development Projects.”
             </p>
           </div>
         </div>
 
-        {/* === Stats Section === */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-24">
-          {aboutStats.map((stat) => (
-            <div 
-              key={stat.label}
-              className="bg-white p-8 rounded-xl border border-gray-200 shadow-lg 
-                         hover:shadow-xl transition-all duration-300"
-            >
-              <p className="text-lg text-brand-accent font-semibold mb-2">
-                {stat.label}
-              </p>
-              <p className="text-2xl text-brand-text font-medium">
-                {stat.value}
-              </p>
-            </div>
-          ))}
+        {/* === UPDATED Single Stat Section === */}
+        {/* This wrapper centers the single card below */}
+        <div className="flex justify-center mb-24">
+          <div 
+            className="bg-white p-8 rounded-xl border border-gray-200 shadow-lg 
+                       hover:shadow-xl transition-all duration-300
+                       max-w-xl w-full flex flex-col items-center text-center"
+          >
+            {/* Subsidiary Info */}
+            <p className="text-lg text-brand-accent font-semibold mb-2">
+              A Subsidiary of
+            </p>
+            <Image
+              src="/assets/ssi-logo.png"
+              alt="Shree Sai Infra Logo"
+              width={150}
+              height={40}
+              className="mb-4"
+            />
+            <p className="text-lg text-brand-text font-medium max-w-sm">
+              Deeshi Engineering Solutions is a proud subsidiary unit of Shree Sai Infra.
+            </p>
+
+            {/* Divider */}
+            <div className="w-1/2 h-px bg-gray-200 my-6"></div>
+
+            {/* Establishment Info */}
+            <p className="text-lg text-brand-accent font-semibold mb-2">
+              Core Establishment
+            </p>
+            <p className="text-2xl text-brand-text font-medium">
+              2017
+            </p>
+          </div>
         </div>
 
-        {/* === Certificates Section === */}
+
+        {/* === Certificates Section (Unchanged) === */}
         <div>
           <h2 className="text-3xl font-bold text-center mb-12">
             Certificates & <span className="text-gradient">Registrations</span>
