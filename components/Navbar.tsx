@@ -12,7 +12,7 @@ export const Navbar = () => {
     { name: 'About Us', href: '/about' },
     { name: 'Services', href: '/services' },
     { name: 'Projects', href: '/projects' },
-    { name: 'Clients', href: '/clients' },
+    // { name: 'Clients', href: '/clients' }, // <-- This link has been removed
     { name: 'Contact', href: '/contact' },
   ];
 
