@@ -21,7 +21,7 @@ const playfair = Playfair_Display({
 
 export const metadata: Metadata = {
   title: 'Deeshi Engineering Solutions',
-  description: 'Market leaders in infrastructure construction & real estate development',
+  description: 'Precision, quality, and excellence in every structure we build.',
   icons: {
     icon: '/assets/des-logo.png',
   },
