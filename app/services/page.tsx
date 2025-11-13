@@ -1,14 +1,14 @@
 // app/services/page.tsx
 import { PageHeader } from '@/components/PageHeader';
-import Image from 'next/image'; // Import the Next.js Image component
+import Image from 'next/image'; 
 import { ReactNode } from 'react';
 
-// Updated list with "Interior" service and new icon PATHS
+// ... servicesList data remains the same ...
 const servicesList: {
   id: string;
   name: string;
   description: string;
-  icon: string; // Changed from ReactNode to string
+  icon: string; 
 }[] = [
   { id: '01', name: 'Civil', description: 'Building foundations for your dreams with precision and expertise.', icon: '/assets/icons/civil.png' },
   { id: '02', name: 'MEP', description: 'Seamlessly integrating Mechanical, Electrical & Plumbing systems.', icon: '/assets/icons/mep.png' },
@@ -22,56 +22,50 @@ const servicesList: {
 
 export default function ServicesPage() {
   return (
-    // 1. Root div: REMOVED all 'overflow' and 'relative' classes.
     <div className="bg-brand-bg text-brand-text">
       
-      {/* PageHeader is now free to overflow upwards */}
       <PageHeader
         title="Our"
         gradientText="Services"
         subtitle="We provide a complete range of services for any construction or real estate project."
       />
 
-      {/* 2. NEW Wrapper: This 'div' now controls the silhouettes.
-           - 'relative' is the anchor.
-           - 'overflow-x-hidden' stops horizontal scrollbars.
-      */}
+      {/* 1. This wrapper clips horizontal overflow */}
       <div className="relative overflow-x-hidden">
         
-        {/* 3. Original content div (no changes needed) */}
-        <div className="relative max-w-7xl mx-auto py-24 px-8">
+        {/* --- Left Background Silhouette --- */}
+        {/* Moved OUTSIDE the max-w-7xl div. Pinned to 'left-0'. */}
+        <Image
+          src="/assets/illustrations/building-silhouette-3.png"
+          alt="Building Silhouette"
+          width={400}
+          height={700}
+          className="absolute -bottom-0 -left-20 w-[400px] h-auto opacity-50 z-0 scale-x-[-1]"
+          priority
+        />
+        
+        {/* --- Right Background Silhouette --- */}
+        {/* Moved OUTSIDE the max-w-7xl div. Pinned to 'right-0'. */}
+        <Image
+          src="/assets/illustrations/building-silhouette-2.png"
+          alt="Building Silhouette"
+          width={400}
+          height={700}
+          className="absolute -bottom-0 -right-20 w-[400px] h-auto opacity-50 z-0 scale-x-[-1]"
+          priority
+        />
 
-          {/* --- Left Background Silhouette (Flipped) --- */}
-          {/* (Your final version from the code snippet) */}
-          <Image
-            src="/assets/illustrations/building-silhouette-3.png"
-            alt="Building Silhouette"
-            width={400}
-            height={700}
-            className="absolute -bottom-0 -left-20 w-[400px] h-auto opacity-50 z-0 scale-x-[-1]"
-            priority
-          />
+        {/* 2. This 'div' now ONLY handles content layout and padding */}
+        <div className="relative z-10 max-w-7xl mx-auto py-24 px-8">
           
-          {/* --- Right Background Silhouette (Flipped) --- */}
-          {/* (Your final version from the code snippet) */}
-          <Image
-            src="/assets/illustrations/building-silhouette-2.png"
-            alt="Building Silhouette"
-            width={400}
-            height={700}
-            className="absolute -bottom-0 -right-20 w-[300px] h-auto opacity-50 z-0 scale-x-[-1]"
-            priority
-          />
-
-          {/* Service Card Grid (z-10) */}
-          <div className="relative z-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
             
             {servicesList.map((service) => (
               <div 
                 key={service.id}
                 className="bg-white rounded-xl border border-gray-200 shadow-lg p-8
                            hover:shadow-xl transition-all duration-300
-                           flex flex-col relative overflow-hidden" // overflow-hidden here is for the number
+                           flex flex-col relative overflow-hidden" 
               >
                 <span 
                   className="absolute -top-4 -right-4 text-[100px] font-extrabold 
@@ -84,8 +78,8 @@ export default function ServicesPage() {
                   <Image
                     src={service.icon}
                     alt={`${service.name} icon`}
-                    width={50} // Set a consistent size
-                    height={50} // Set a consistent size
+                    width={50} 
+                    height={50} 
                   />
                 </div>
 

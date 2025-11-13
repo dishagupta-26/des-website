@@ -1,17 +1,10 @@
 // app/page.tsx
 import Image from 'next/image';
 import Link from 'next/link';
-
-// Icons for the sections below the hero
-import { 
-  CheckCircle,
-  DraftingCompass,
-  HardHat, 
-} from 'lucide-react';
+import { CheckCircle, DraftingCompass, HardHat } from 'lucide-react';
 
 export default function HomePage() {
 
-  // Data for the "Process" section (remains the same)
   const processSteps = [
     {
       icon: <DraftingCompass size={32} className="text-brand-accent" />,
@@ -33,31 +26,31 @@ export default function HomePage() {
   return (
     <div className="flex flex-col">
       
-      {/* === SECTION 1: HERO (Unchanged) === */}
-      <section className="relative w-full h-[87vh] flex items-center justify-center text-center overflow-hidden px-8">
+      {/* 1. Outer section is relative and clips overflow. NO 'px-8' here. */}
+      <section className="relative w-full h-[87vh] flex items-center justify-center text-center overflow-hidden">
         
-        {/* Left Illustration */}
+        {/* Left Illustration - Now pinned to the true 'left-0' */}
         <Image
           src="/assets/illustrations/construction-worker.png"
           alt="Construction Worker"
           width={400}
           height={600}
-          className="absolute left-20 bottom-0 w-1/3 max-w-[275px] opacity-20 lg:opacity-100"
+          className="absolute left-10 bottom-0 w-1/4 max-w-[275px] opacity-20 lg:opacity-100"
           priority
         />
 
-        {/* Right Illustration */}
+        {/* Right Illustration - Now pinned to the true 'right-0' */}
         <Image
           src="/assets/illustrations/building-silhouette.png"
           alt="Building Silhouette"
           width={400}
           height={700}
-          className="absolute right-10 bottom-0 w-1/3 max-w-[800px] opacity-20 lg:opacity-100"
+          className="absolute right-0 bottom-0 w-1/3 max-w-[800px] opacity-20 lg:opacity-100"
           priority
         />
 
-        {/* Center Content */}
-        <div className="relative z-10 flex flex-col items-center max-w-3xl mx-auto">
+        {/* 2. Inner content 'div' now has 'px-8' to constrain the text */}
+        <div className="relative z-10 flex flex-col items-center max-w-3xl mx-auto px-8">
           <Image
             src="/assets/des-logo.png"
             alt="Deeshi Engineering Solutions Logo"
@@ -66,7 +59,6 @@ export default function HomePage() {
             priority
             className="mb-8"
           />
-          {/* This is the changed line */}
           <h1 className="font-serif text-4xl md:text-6xl font-bold leading-tight text-brand-text">
             <span className="block">Engineering Your</span>
             <span className="text-gradient">Vision Into Reality.</span>
@@ -78,8 +70,7 @@ export default function HomePage() {
         
       </section>
 
-      {/* === SECTION 2: OUR PROCESS (Colors Swapped) === */}
-      {/* Main section background is now 'bg-white' */}
+      {/* === SECTION 2: OUR PROCESS (Unchanged) === */}
       <section className="py-24 px-8 bg-white border-t border-gray-200">
         <div className="max-w-7xl mx-auto">
           <h2 className="text-3xl font-bold text-center mb-4">
@@ -93,7 +84,6 @@ export default function HomePage() {
             {processSteps.map((step) => (
               <div 
                 key={step.title}
-                /* Card background is now 'bg-brand-bg' */
                 className="bg-brand-bg p-8 rounded-xl border border-gray-200 shadow-lg 
                            hover:shadow-xl transition-all duration-300"
               >

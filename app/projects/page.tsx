@@ -2,7 +2,8 @@
 import Image from 'next/image';
 import { PageHeader } from '@/components/PageHeader';
 
-// 1. Image list (unchanged)
+// ... projectImages, clientsData, ongoingProjectsData, ProjectImage component ...
+// (All data and helper component are unchanged)
 const projectImages = {
   'project-1.jpeg': { src: '/assets/projects/project-1.jpeg', alt: 'Modern bedroom interior', width: 1600, height: 900 },
   'project-2.jpeg': { src: '/assets/projects/project-2.jpeg', alt: 'Sleek kitchen interior', width: 900, height: 1600 },
@@ -13,8 +14,6 @@ const projectImages = {
   'project-7.jpeg': { src: '/assets/projects/project-7.jpeg', alt: 'Large pillar structure', width: 1600, height: 1200 },
   'project-8.jpeg': { src: '/assets/projects/project-8.jpeg', alt: 'Construction site with rebar and temple', width: 900, height: 1600 },
 };
-
-// 2. Client data (unchanged)
 const clientsData = [
   {
     name: 'Ruparel Realty',
@@ -41,8 +40,6 @@ const clientsData = [
     summary: 'Conducted specialized granite and civil plastering work for various metro stations.'
   },
 ];
-
-// 3. Ongoing Projects data (unchanged)
 const ongoingProjectsData = [
   {
     name: 'Siddha Developers (jointly with Pinaki Creators)',
@@ -57,8 +54,6 @@ const ongoingProjectsData = [
     summary: 'Application of specialized epoxy painting for the structural shed and associated machinery.'
   },
 ];
-
-// 4. ProjectImage helper component (unchanged)
 const ProjectImage = ({ data }: { data: { src: string, alt: string, width: number, height: number } }) => {
   return (
     <div className="w-full flex-1 min-h-0">
@@ -74,20 +69,19 @@ const ProjectImage = ({ data }: { data: { src: string, alt: string, width: numbe
   );
 }
 
+
 export default function ProjectsPage() {
   return (
     <div className="bg-brand-bg text-brand-text">
       
-      {/* 5. PageHeader (unchanged) */}
       <PageHeader
         title="Our"
         gradientText="Projects"
         subtitle="A visual showcase of our commitment to quality, precision, and craftsmanship."
       />
 
+      {/* 1. Image Collage Section (no changes) */}
       <div className="py-12 px-8">
-        
-        {/* 6. Image collage grid (unchanged) */}
         <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* ... all 4 columns ... */}
           <div className="flex flex-col gap-8">
@@ -109,9 +103,10 @@ export default function ProjectsPage() {
         </div>
       </div>
 
-      {/* 7. "We've worked with" Section (unchanged) */}
+      {/* 2. "We've worked with" Section */}
       <section className="relative py-24 bg-white border-t border-gray-200 overflow-hidden">
         
+        {/* 'site.png' is pinned to the section edges */}
         <Image
           src="/assets/illustrations/site.png"
           alt="Construction Site Silhouette"
@@ -120,12 +115,11 @@ export default function ProjectsPage() {
           className="absolute bottom-0 left-0 w-full h-auto opacity-50 z-0"
         />
 
+        {/* Content is in a max-w- container with padding */}
         <div className="relative z-10 max-w-7xl mx-auto px-8">
-          
           <h2 className="text-3xl font-bold text-center mb-16">
             We&apos;ve <span className="text-gradient">Worked With</span>
           </h2>
-
           <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
             {clientsData.map((client) => (
               <div
@@ -142,51 +136,39 @@ export default function ProjectsPage() {
               </div>
             ))}
           </div>
-
         </div>
       </section>
 
-      {/* 8. UPDATED: "Ongoing Projects" Section */}
+      {/* 3. "Ongoing Projects" Section */}
       <section className="relative py-24 bg-brand-bg border-t border-gray-200 overflow-hidden">
 
-        {/* --- Left Background Worker --- */}
-        {/* - opacity-100 (opaque)
-            - h-96 (bigger)
-            - left-4 (moved in)
-        */}
+        {/* Left Worker - Pinned to the section edges */}
         <Image
           src="/assets/illustrations/construction-worker-2.png"
           alt="Construction Worker"
           width={400}
           height={600}
-          className="absolute bottom-0 left-4 w-auto h-200 opacity-100 z-0"
+          className="absolute bottom-0 left-4 w-auto h-96 opacity-100 z-0"
         />
 
-        {/* --- Right Background Worker --- */}
-        {/* - opacity-100 (opaque)
-            - h-96 (bigger)
-            - right-4 (moved in)
-        */}
+        {/* Right Worker - Pinned to the section edges */}
         <Image
           src="/assets/illustrations/construction-worker-3.png"
           alt="Construction Worker"
           width={400}
           height={600}
-          className="absolute bottom-0 right-4 w-auto h-200 opacity-100 z-0"
+          className="absolute bottom-0 right-4 w-auto h-96 opacity-100 z-0"
         />
 
-        {/* Added 'relative z-10' to this container */}
+        {/* Content is in a max-w- container with padding */}
         <div className="relative z-10 max-w-4xl mx-auto px-8">
-          
           <h2 className="text-3xl font-bold text-center mb-16">
             Ongoing <span className="text-gradient">Projects</span>
           </h2>
-
           <div className="grid grid-cols-1 gap-10">
             {ongoingProjectsData.map((project) => (
               <div
                 key={project.name}
-                // Removed bg-opacity-90
                 className="bg-white rounded-xl border border-gray-200 shadow-lg 
                            hover:shadow-xl transition-all duration-300 p-8"
               >
@@ -199,7 +181,6 @@ export default function ProjectsPage() {
               </div>
             ))}
           </div>
-
         </div>
       </section>
 

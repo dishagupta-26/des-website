@@ -16,19 +16,21 @@ export default function ContactPage() {
         subtitle="We're here to answer any questions and help you start your next project."
       />
 
+      {/* 1. Outer container clips overflow and is the anchor */}
       <div className="relative max-w-7xl mx-auto py-24 px-8 overflow-hidden">
         
+        {/* Hard Hat - Pinned to the outer container */}
         <Image
           src="/assets/illustrations/hard-hat.png"
           alt="Hard Hat"
           width={500}
           height={500}
-          className="absolute right-20 top-1/2 -translate-y-1/2 w-[400px] h-auto opacity-75 z-0"
+          className="absolute right-20 top-1/2 -translate-y-1/2 w-[400px] h-auto opacity-10 z-0"
         />
 
+        {/* 2. Content is centered (no 'px-8' needed here) */}
         <div className="relative z-10 flex justify-center">
           
-          {/* UPDATED: Added 'bg-opacity-50' and 'backdrop-blur-sm' */}
           <div className="bg-white bg-opacity-50 backdrop-blur-sm rounded-xl border border-gray-200 shadow-lg 
                           hover:shadow-xl transition-all duration-300 p-12
                           w-full max-w-2xl">
@@ -40,7 +42,6 @@ export default function ContactPage() {
                 <MapPin size={24} className="text-brand-accent mt-1" />
                 <div>
                   <h3 className="text-xl font-semibold">Address</h3>
-                  {/* UPDATED: 'href' changed to your new link */}
                   <a
                     href="https://share.google/sEnzDALFB2kUOB5Ds"
                     target="_blank"
