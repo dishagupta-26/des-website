@@ -1,36 +1,45 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Deeshi Engineering Solutions – Website
 
-## Getting Started
+Marketing and portfolio website for **Deeshi Engineering Solutions**, showcasing our construction and infrastructure projects, services, and partnerships.
 
-First, run the development server:
+Built with **Next.js + TypeScript + Tailwind CSS** and deployed on **Vercel**.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+---
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🌐 Live Site
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+**Production:** https://deeshi.vercel.app  
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+---
 
-## Learn More
+## ✨ Key Features
 
-To learn more about Next.js, take a look at the following resources:
+- **Modern landing page**
+  - Bold hero section with logo and punchline.
+  - Clear navigation to Home, About, Services, Projects, and Contact.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- **Projects & Gallery**
+  - Curated showcase of important projects.
+  - Visual gallery using custom illustrations from the `assets/illustrations` folder.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+- **Services & Process**
+  - Tabbed sections describing what we do and how we work.
+  - Focus on clarity rather than numbers/figures.
 
-## Deploy on Vercel
+- **Partners / Collaborations**
+  - Compact section to highlight organisations we’ve worked with.
+  - Designed so that our brand stays central while still giving partners visibility.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- **Responsive & Accessible**
+  - Layout optimised for desktop, tablet, and mobile.
+  - Semantic HTML, alt text, and keyboard-friendly navigation (work in progress).
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+---
+
+## 🛠 Tech Stack
+
+- **Framework:** Next.js (App Router)
+- **Language:** TypeScript
+- **Styling:** Tailwind CSS
+- **Deployment:** Vercel
+- **Assets:** Custom illustrations and icons in `assets/illustrations` and `public/`
