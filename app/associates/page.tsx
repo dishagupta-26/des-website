@@ -22,7 +22,7 @@ export default function AssociatesPage() {
           width={1200}
           height={500}
           className="absolute bottom-0 left-1/2 -translate-x-1/2 
-                     w-[1200px] h-auto opacity-[0.05] z-0"
+                     w-[1200px] h-auto opacity-[0.5] z-0"
         />
 
         <Image
