@@ -37,14 +37,14 @@ const clientsData = [
   },
   {
     name: 'SIPL-AIPL JV',
-    summary: 'Conducted specialized granite and civil plastering work for various metro stations.'
+    summary: 'Conducted specialized granite, gypsum and civil plastering work for various metro stations.'
   },
 ];
 const ongoingProjectsData = [
-  {
-    name: 'Siddha Developers (jointly with Pinaki Creators)',
-    summary: 'Currently executing civil work for the basement and podium levels of a 42-storey residential tower.'
-  },
+  // {
+  //  name: 'Siddha Developers (jointly with Pinaki Creators)',
+  //  summary: 'Currently executing civil work for the basement and podium levels of a 42-storey residential tower.'
+  //},
   {
     name: 'Meghdhoot Chemical Ltd.',
     summary: 'Complete aesthetic revamp and structural strengthening work for their industrial facility.'
