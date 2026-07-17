@@ -22,13 +22,13 @@ export default function AboutPage() {
         subtitle="Building foundations for your dreams with precision and expertise."
       />
 
-      <div className="max-w-7xl mx-auto py-24 px-8">
+      <div className="max-w-7xl mx-auto py-12 md:py-24 px-6 md:px-8">
         
         {/* === Vision & Mission Section (Unchanged) === */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-16 mb-24">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16 mb-16 md:mb-24">
           
           {/* --- Vision Card --- */}
-          <div className="relative bg-white border border-gray-200 rounded-xl p-10 shadow-lg 
+          <div className="relative bg-white border border-gray-200 rounded-xl p-6 md:p-10 shadow-lg 
                           hover:shadow-xl transition-all duration-300">
             
             <Image
@@ -52,7 +52,7 @@ export default function AboutPage() {
           </div>
 
           {/* --- Mission Card --- */}
-          <div className="relative bg-white border border-gray-200 rounded-xl p-10 shadow-lg
+          <div className="relative bg-white border border-gray-200 rounded-xl p-6 md:p-10 shadow-lg
                           hover:shadow-xl transition-all duration-300">
             
             <Image
@@ -75,9 +75,9 @@ export default function AboutPage() {
 
         {/* === UPDATED Single Stat Section === */}
         {/* This wrapper centers the single card below */}
-        <div className="flex justify-center mb-24">
+        <div className="flex justify-center mb-16 md:mb-24">
           <div 
-            className="bg-white p-8 rounded-xl border border-gray-200 shadow-lg 
+            className="bg-white p-6 md:p-8 rounded-xl border border-gray-200 shadow-lg 
                        hover:shadow-xl transition-all duration-300
                        max-w-xl w-full flex flex-col items-center text-center"
           >

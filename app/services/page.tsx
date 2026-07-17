@@ -56,14 +56,14 @@ export default function ServicesPage() {
         />
 
         {/* 2. This 'div' now ONLY handles content layout and padding */}
-        <div className="relative z-10 max-w-7xl mx-auto py-24 px-8">
+        <div className="relative z-10 max-w-7xl mx-auto py-12 md:py-24 px-6 md:px-8">
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
             
             {servicesList.map((service) => (
               <div 
                 key={service.id}
-                className="bg-white rounded-xl border border-gray-200 shadow-lg p-8
+                className="bg-white rounded-xl border border-gray-200 shadow-lg p-6 md:p-8
                            hover:shadow-xl transition-all duration-300
                            flex flex-col relative overflow-hidden" 
               >

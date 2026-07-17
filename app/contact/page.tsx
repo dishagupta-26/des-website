@@ -17,7 +17,7 @@ export default function ContactPage() {
       />
 
       {/* 1. Outer container clips overflow and is the anchor */}
-      <div className="relative max-w-7xl mx-auto py-24 px-8 overflow-hidden">
+      <div className="relative max-w-7xl mx-auto py-12 md:py-24 px-6 md:px-8 overflow-hidden">
         
         {/* Hard Hat - Pinned to the outer container */}
         <Image
@@ -32,7 +32,7 @@ export default function ContactPage() {
         <div className="relative z-10 flex justify-center">
           
           <div className="bg-white bg-opacity-50 backdrop-blur-sm rounded-xl border border-gray-200 shadow-lg 
-                          hover:shadow-xl transition-all duration-300 p-12
+                          hover:shadow-xl transition-all duration-300 p-6 md:p-12
                           w-full max-w-2xl">
             <h2 className="text-3xl font-bold mb-8">
               Contact <span className="text-gradient">Information</span>
@@ -46,7 +46,7 @@ export default function ContactPage() {
                     href="https://share.google/sEnzDALFB2kUOB5Ds"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-gray-700 text-lg hover:text-brand-accent transition-colors"
+                    className="text-gray-700 text-lg hover:text-brand-accent transition-colors break-words"
                   >
                     Shop no. 8, Laxmi Narayan Complex, Sector 12A, 
                     Koparkhairne, Navi Mumbai - 400709
@@ -71,7 +71,7 @@ export default function ContactPage() {
                   <h3 className="text-xl font-semibold">Email</h3>
                   <a 
                     href="mailto:deeshiengineeringsolutions@gmail.com"
-                    className="text-gray-700 text-lg hover:text-brand-accent transition-colors"
+                    className="text-gray-700 text-lg hover:text-brand-accent transition-colors break-all"
                   >
                     deeshiengineeringsolutions@gmail.com
                   </a>

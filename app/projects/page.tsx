@@ -81,7 +81,7 @@ export default function ProjectsPage() {
       />
 
       {/* 1. Image Collage Section (no changes) */}
-      <div className="py-12 px-8">
+      <div className="py-8 md:py-12 px-6 md:px-8">
         <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* ... all 4 columns ... */}
           <div className="flex flex-col gap-8">
@@ -104,7 +104,7 @@ export default function ProjectsPage() {
       </div>
 
       {/* 2. "We've worked with" Section */}
-      <section className="relative py-24 bg-white border-t border-gray-200 overflow-hidden">
+      <section className="relative py-12 md:py-24 bg-white border-t border-gray-200 overflow-hidden">
         
         {/* 'site.png' is pinned to the section edges */}
         <Image
@@ -116,7 +116,7 @@ export default function ProjectsPage() {
         />
 
         {/* Content is in a max-w- container with padding */}
-        <div className="relative z-10 max-w-7xl mx-auto px-8">
+        <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-8">
           <h2 className="text-3xl font-bold text-center mb-16">
             We&apos;ve <span className="text-gradient">Worked With</span>
           </h2>
@@ -125,7 +125,7 @@ export default function ProjectsPage() {
               <div
                 key={client.name}
                 className="bg-brand-bg bg-opacity-90 rounded-xl border border-gray-200 shadow-lg 
-                           hover:shadow-xl transition-all duration-300 p-8"
+                           hover:shadow-xl transition-all duration-300 p-6 md:p-8"
               >
                 <h3 className="text-2xl font-semibold text-brand-text mb-4">
                   {client.name}
@@ -140,7 +140,7 @@ export default function ProjectsPage() {
       </section>
 
       {/* 3. "Ongoing Projects" Section */}
-      <section className="relative py-24 bg-brand-bg border-t border-gray-200 overflow-hidden">
+      <section className="relative py-12 md:py-24 bg-brand-bg border-t border-gray-200 overflow-hidden">
 
         {/* Left Worker - Pinned to the section edges */}
         <Image
@@ -161,7 +161,7 @@ export default function ProjectsPage() {
         />
 
         {/* Content is in a max-w- container with padding */}
-        <div className="relative z-10 max-w-4xl mx-auto px-8">
+        <div className="relative z-10 max-w-4xl mx-auto px-6 md:px-8">
           <h2 className="text-3xl font-bold text-center mb-16">
             Ongoing <span className="text-gradient">Projects</span>
           </h2>
@@ -170,7 +170,7 @@ export default function ProjectsPage() {
               <div
                 key={project.name}
                 className="bg-white rounded-xl border border-gray-200 shadow-lg 
-                           hover:shadow-xl transition-all duration-300 p-8"
+                           hover:shadow-xl transition-all duration-300 p-6 md:p-8"
               >
                 <h3 className="text-2xl font-semibold text-brand-text mb-4">
                   {project.name}
