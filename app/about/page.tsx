@@ -36,7 +36,7 @@ export default function AboutPage() {
               alt="Crane Illustration"
               width={150}
               height={150}
-              className="absolute -top-20 -right-10 w-44 h-44 scale-x-[-1]"
+              className="absolute -top-20 -right-10 w-44 h-44 scale-x-[-1] hidden md:block"
             />
 
             <h2 className="relative z-10 text-3xl font-bold mb-6">
@@ -60,7 +60,7 @@ export default function AboutPage() {
               alt="Blueprint Hat Illustration"
               width={200}
               height={100}
-              className="absolute -bottom-0 -right-4 w-80 h-auto object-contain"
+              className="absolute -bottom-0 -right-4 w-80 h-auto object-contain hidden md:block"
             />
 
             <h2 className="relative z-10 text-3xl font-bold mb-6">
@@ -123,8 +123,8 @@ export default function AboutPage() {
                 href={cert.href}
                 target="_blank" // Opens the certificate in a new tab
                 rel="noopener noreferrer"
-                className="bg-brand-accent text-white text-lg font-medium px-8 py-4 rounded-full
-                           shadow-md hover:opacity-90 transition-opacity"
+                className="bg-brand-accent text-white text-base md:text-lg font-medium px-6 py-3 md:px-8 md:py-4 rounded-full
+                           shadow-md hover:opacity-90 transition-opacity text-center"
               >
                 {cert.name}
               </Link>

@@ -40,7 +40,7 @@ export default function ServicesPage() {
           alt="Building Silhouette"
           width={400}
           height={700}
-          className="absolute -bottom-0 -left-20 w-[400px] h-auto opacity-50 z-0 scale-x-[-1]"
+          className="absolute -bottom-0 -left-20 w-[400px] h-auto opacity-50 z-0 scale-x-[-1] hidden md:block"
           priority
         />
         
@@ -51,7 +51,7 @@ export default function ServicesPage() {
           alt="Building Silhouette"
           width={400}
           height={700}
-          className="absolute -bottom-0 -right-20 w-[400px] h-auto opacity-50 z-0 scale-x-[-1]"
+          className="absolute -bottom-0 -right-20 w-[400px] h-auto opacity-50 z-0 scale-x-[-1] hidden md:block"
           priority
         />
 

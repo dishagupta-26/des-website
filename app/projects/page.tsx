@@ -148,7 +148,7 @@ export default function ProjectsPage() {
           alt="Construction Worker"
           width={400}
           height={600}
-          className="absolute bottom-0 left-4 w-auto h-96 opacity-100 z-0"
+          className="absolute bottom-0 left-4 w-auto h-96 opacity-100 z-0 hidden lg:block"
         />
 
         {/* Right Worker - Pinned to the section edges */}
@@ -157,7 +157,7 @@ export default function ProjectsPage() {
           alt="Construction Worker"
           width={400}
           height={600}
-          className="absolute bottom-0 right-4 w-auto h-96 opacity-100 z-0"
+          className="absolute bottom-0 right-4 w-auto h-96 opacity-100 z-0 hidden lg:block"
         />
 
         {/* Content is in a max-w- container with padding */}

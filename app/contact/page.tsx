@@ -25,7 +25,7 @@ export default function ContactPage() {
           alt="Hard Hat"
           width={500}
           height={500}
-          className="absolute right-20 top-1/2 -translate-y-1/2 w-[400px] h-auto opacity-10 z-0"
+          className="absolute right-4 md:right-20 top-1/2 -translate-y-1/2 w-[250px] md:w-[400px] h-auto opacity-10 z-0"
         />
 
         {/* 2. Content is centered (no 'px-8' needed here) */}

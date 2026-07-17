@@ -57,7 +57,7 @@ export default function HomePage() {
             width={400}
             height={111}
             priority
-            className="mb-8"
+            className="mb-8 w-full max-w-[280px] sm:max-w-[400px] h-auto"
           />
           <h1 className="font-serif text-4xl md:text-6xl font-bold leading-tight text-brand-text">
             <span className="block">Engineering Your</span>

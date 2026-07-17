@@ -16,13 +16,13 @@ export const Footer = () => {
       
       {/* === Main Footer Content Section === */}
       {/*
-        - pt-8 (removed bottom padding)
-        - items-end aligns content to the bottom of this div
+        - py-6 on mobile, py-0 on desktop
+        - flex-col on mobile, flex-row on desktop
       */}
-      <div className="max-w-7xl mx-auto pt-0 px-8 flex justify-between items-end">
+      <div className="max-w-7xl mx-auto py-6 md:py-0 px-8 flex flex-col md:flex-row justify-between items-center md:items-end gap-6 md:gap-0">
         
         {/* Subsidiary Section (Left) */}
-        <div className="flex items-center gap-4">
+        <div className="flex flex-col sm:flex-row items-center gap-4 text-center sm:text-left">
           <Image
             src="/assets/ssi-logo.png"
             alt="Shree Sai Infra Logo"
@@ -32,7 +32,7 @@ export const Footer = () => {
           {/* - Added 'max-w-xs' to force an even line break
             - Changed <h5> to <p> and made text 'text-sm'
           */}
-          <div className="text-left max-w-xs">
+          <div className="max-w-xs">
             <p className="text-sm text-brand-text">
               <b>Deeshi Engineering Solutions</b> is a proud 
               subsidiary unit of <b>Shree Sai Infra</b>.
